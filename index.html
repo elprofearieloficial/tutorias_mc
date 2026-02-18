@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestión de Tutorías | Panel Administrador</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container-fluid min-vh-100">
+      <div class="row min-vh-100">
+        <aside class="col-12 col-lg-3 col-xl-2 sidebar py-4 px-3">
+          <div>
+            <h1 class="h4 fw-bold text-white mb-1">TutoríasMC</h1>
+            <p class="text-white-50 small mb-4">Panel del administrador</p>
+          </div>
+
+          <nav>
+            <ul class="nav nav-pills flex-column gap-2" id="menuAdmin">
+              <li class="nav-item">
+                <button class="nav-link active w-100 text-start" data-section="inicio">
+                  Inicio
+                </button>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link w-100 text-start" data-section="estudiantes">
+                  Consultar estudiantes
+                </button>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link w-100 text-start" data-section="tutores">
+                  Consultar listado de tutores
+                </button>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link w-100 text-start" data-section="tutorados-angular">
+                  Consultar tutorados con tutores (Angular)
+                </button>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link w-100 text-start" data-section="asignar-tutor">
+                  Asignar tutor a tutorado
+                </button>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link w-100 text-start" data-section="asignar-tutorado">
+                  Asignar tutorado a un tutor
+                </button>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link w-100 text-start" data-section="constancias-asignacion">
+                  Generar constancias de asignación
+                </button>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link w-100 text-start" data-section="constancias-participacion">
+                  Generar constancias de participación
+                </button>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link w-100 text-start" data-section="reportes-entregas">
+                  Consultar entregas de reportes
+                </button>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link w-100 text-start" data-section="area-reportes">
+                  Área de reportes
+                </button>
+              </li>
+            </ul>
+          </nav>
+        </aside>
+
+        <main class="col-12 col-lg-9 col-xl-10 py-4 px-4 px-lg-5 main-content">
+          <header class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+            <div>
+              <h2 class="h3 fw-bold mb-1">Bienvenido, Administrador</h2>
+              <p class="text-secondary mb-0" id="descripcionSeccion">
+                Usa el menú lateral para navegar por las funciones principales de la gestión de tutorías.
+              </p>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+              <span class="badge rounded-pill text-bg-primary px-3 py-2">Sesión activa</span>
+              <button class="btn btn-outline-secondary btn-sm">Cerrar sesión</button>
+            </div>
+          </header>
+
+          <section class="row g-3" id="tarjetasInicio">
+            <div class="col-12 col-md-6 col-xl-4">
+              <article class="card h-100 card-menu">
+                <div class="card-body">
+                  <h3 class="h5 card-title">Estudiantes</h3>
+                  <p class="card-text">Consulta y filtra la información de estudiantes tutorados.</p>
+                  <button class="btn btn-primary btn-sm" data-section="estudiantes">Ir a estudiantes</button>
+                </div>
+              </article>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4">
+              <article class="card h-100 card-menu">
+                <div class="card-body">
+                  <h3 class="h5 card-title">Tutores</h3>
+                  <p class="card-text">Visualiza el listado de tutores disponibles y sus cargas.</p>
+                  <button class="btn btn-primary btn-sm" data-section="tutores">Ver tutores</button>
+                </div>
+              </article>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4">
+              <article class="card h-100 card-menu">
+                <div class="card-body">
+                  <h3 class="h5 card-title">Asignaciones</h3>
+                  <p class="card-text">Realiza asignaciones entre tutores y tutorados según la necesidad.</p>
+                  <button class="btn btn-primary btn-sm" data-section="asignar-tutor">Gestionar</button>
+                </div>
+              </article>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4">
+              <article class="card h-100 card-menu">
+                <div class="card-body">
+                  <h3 class="h5 card-title">Tutorados y tutores (Angular)</h3>
+                  <p class="card-text">Consulta la relación de tutorados con su tutor usando una vista en Angular.</p>
+                  <button class="btn btn-primary btn-sm" data-section="tutorados-angular">Abrir vista Angular</button>
+                </div>
+              </article>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4">
+              <article class="card h-100 card-menu">
+                <div class="card-body">
+                  <h3 class="h5 card-title">Constancias</h3>
+                  <p class="card-text">Genera constancias de asignación o de participación rápidamente.</p>
+                  <button class="btn btn-primary btn-sm" data-section="constancias-asignacion">Generar constancias</button>
+                </div>
+              </article>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4">
+              <article class="card h-100 card-menu">
+                <div class="card-body">
+                  <h3 class="h5 card-title">Entregas de reportes</h3>
+                  <p class="card-text">Da seguimiento al cumplimiento de reportes de tutorías.</p>
+                  <button class="btn btn-primary btn-sm" data-section="reportes-entregas">Consultar entregas</button>
+                </div>
+              </article>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4">
+              <article class="card h-100 card-menu">
+                <div class="card-body">
+                  <h3 class="h5 card-title">Área de reportes</h3>
+                  <p class="card-text">Accede a métricas, estadísticas y exportes administrativos.</p>
+                  <button class="btn btn-primary btn-sm" data-section="area-reportes">Abrir reportes</button>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="card mt-4 d-none" id="panelSeccion">
+            <div class="card-body">
+              <h3 class="h5 mb-2" id="tituloSeccion"></h3>
+              <p class="mb-0 text-secondary" id="textoSeccion"></p>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
