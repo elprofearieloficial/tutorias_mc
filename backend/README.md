@@ -9,13 +9,22 @@ Este backend expone APIs REST para consumir información de la base de datos MyS
 
 ## Configuración rápida
 1. Edita `src/main/resources/application.properties` con tus credenciales reales de MySQL.
-2. Si tu tabla/columnas de profesores tienen nombres diferentes, ajusta `app.sql.profesores`.
+2. Si tu tabla/columnas tienen nombres diferentes, ajusta:
+   - `app.sql.profesores`
+   - `app.sql.tutorados-con-tutor`
 
-> La consulta debe devolver estos alias exactos:
+> `app.sql.profesores` debe devolver alias exactos:
 - `id`
 - `nombre_completo`
 - `grado_academico`
 - `carrera`
+
+> `app.sql.tutorados-con-tutor` debe devolver alias exactos:
+- `matricula`
+- `nombre_completo`
+- `carrera`
+- `semestre`
+- `tutor`
 
 ## Ejecutar
 ```bash
@@ -23,17 +32,19 @@ cd backend
 mvn spring-boot:run
 ```
 
-## Endpoint inicial
+## Endpoints iniciales
 - `GET /api/profesores`
+- `GET /api/tutorados-tutores`
 
-Ejemplo de respuesta:
+Ejemplo de respuesta (`/api/tutorados-tutores`):
 ```json
 [
   {
-    "id": 1,
-    "nombreCompleto": "Dr. Carlos Jiménez Ortega",
-    "gradoAcademico": "Doctorado",
-    "carrera": "Ing. en Computación"
+    "matricula": "2021001",
+    "nombreCompleto": "Ana Paula Mendoza Ruiz",
+    "carrera": "Ing. en Computación",
+    "semestre": 2,
+    "tutor": "Dr. Carlos Jiménez Ortega"
   }
 ]
 ```

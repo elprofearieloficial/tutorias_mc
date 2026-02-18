@@ -12,6 +12,10 @@ const secciones = {
     titulo: 'Consultar listado de tutores',
     descripcion: 'Esta sección mostrará los tutores registrados, su disponibilidad y la carga de tutorados por periodo.'
   },
+  'tutorados-angular': {
+    titulo: 'Consultar tutorados con tutores (Angular)',
+    descripcion: 'Vista construida con Angular para consultar tutorados y su tutor asignado con filtros de carrera y semestre.'
+  },
   'asignar-tutor': {
     titulo: 'Asignar tutor a tutorado',
     descripcion: 'Permite seleccionar a un tutor y vincularlo con un estudiante tutorado.'
@@ -53,6 +57,11 @@ function activarSeccion(clave) {
 
   if (clave === 'tutores') {
     window.location.href = 'tutores.html';
+    return;
+  }
+
+  if (clave === 'tutorados-angular') {
+    window.location.href = 'tutorados-angular.html';
     return;
   }
 
