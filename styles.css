@@ -1,0 +1,56 @@
+:root {
+  --sidebar-bg: #1e2a44;
+  --sidebar-active: #2f66ff;
+}
+
+body {
+  background: #f3f6fb;
+  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+}
+
+.sidebar {
+  background: linear-gradient(180deg, var(--sidebar-bg) 0%, #172033 100%);
+}
+
+.sidebar .nav-link {
+  color: #d9e2ff;
+  border: 1px solid transparent;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link:focus {
+  color: #fff;
+  border-color: #91abff;
+}
+
+.sidebar .nav-link.active {
+  background: var(--sidebar-active);
+  color: #fff;
+  font-weight: 600;
+}
+
+.main-content {
+  background: #f3f6fb;
+}
+
+.card-menu {
+  border: 1px solid #dce5ff;
+  border-radius: 0.85rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-menu:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.5rem 1rem rgba(19, 32, 66, 0.12);
+}
+
+#panelSeccion {
+  border: 1px dashed #acc0ff;
+  background: #f9fbff;
+}
+
+@media (max-width: 991.98px) {
+  .sidebar {
+    min-height: auto;
+  }
+}
